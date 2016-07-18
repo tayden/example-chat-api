@@ -1,11 +1,10 @@
 {
-  "name": "MarineGEO",
+  "name": "Chat-API",
   "version": "2.1.0",
-  "description": "API endpoints for MarineGEO data",
-  "main": "index.js",
+  "description": "API endpoints for chat applicaiton",
+  "main": "bin/www",
   "scripts": {
     "start": "node ./bin/www",
-    "local": "npm run start:local",
     "test": "DEBUG=false ./node_modules/.bin/mocha -t 4000",
     "lint": "./node_modules/.bin/eslint ./**/*.js; exit 0;"
   },
@@ -19,20 +18,21 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "axios": "^0.9.1",
+    "axios": "^0.13.1",
     "bluebird": "^3.3.5",
     "co-body": "^4.0.0",
-    "knex": "^0.10.0",
+    "eslint": "^3.1.0",
+    "knex": "^0.11.7",
     "koa": "^1.2.0",
     "koa-cors": "0.0.16",
-    "koa-morgan": "^0.4.0",
+    "koa-morgan": "^1.0.1",
     "koa-router": "^5.4.0",
-    "pg": "^4.5.5",
+    "pg": "^6.0.2",
     "validator": "^5.2.0",
     "winston": "^2.2.0"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^3.1.0",
     "foreman": "^1.4.1",
     "mocha": "^2.4.5",
     "supertest-koa-agent": "^0.2.1"

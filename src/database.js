@@ -1,5 +1,7 @@
 // Connect and export postgres database connection
-var environment = process.env.NODE_ENV || 'development';
-var config = require('../knexfile.js')[environment];
+const Knex = require('knex');
+const pg = require('pg');
+pg.defaults.ssl = true;
 
-module.exports = require('knex')(config);
+var environment = process.env.NODE_ENV || 'development';
+module.exports = Knex(require('../knexfile.js')[environment]);
