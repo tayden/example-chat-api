@@ -1,5 +1,5 @@
 const router = require('koa-router')();
-const s = require('../../utils/generic-middleware-stacks');
+const s = require('../utils/generic-middleware-stacks');
 
 const model = 'message';
 
