@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+require('dotenv').config();
+
+const app = require('koa')();
+
+const morgan = require('../src/middlewares/morgan');
+const cors = require('../src/middlewares/cors');
+const router = require('../src/routes');
+const logger = require('../src/utils/logger');
+
+const PORT = process.env.PORT || 3000;
+
+// Trust proxy header fields
+app.proxy = true;
+
+// Load global middlewares
+app.use(cors);
+
+// Load request logging
+if(process.env.NODE_ENV !== 'test') {
+  app.use(morgan);
+}
+
+// Load API routes
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
+
+// Start http server
+app.listen(PORT);
+logger.info(`Listening on port ${PORT}`);
+
+module.exports = app;

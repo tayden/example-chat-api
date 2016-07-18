@@ -1,0 +1,48 @@
+{
+  "name": "MarineGEO",
+  "version": "2.1.0",
+  "description": "API endpoints for MarineGEO data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "local": "npm run start:local",
+    "start:hecate": "NODE_ENV=production pm2 start ./bin/www --name hakai-api --watch --merge-logs --ignore-watch=\"logs node_modules .git\" -i max -l logs/api.log",
+    "start:goose": "NODE_ENV=development pm2 start ./bin/www --name hakai-api --watch --merge-logs --ignore-watch=\"logs node_modules .git\" --interpreter /home/hakai/.nvm/versions/node/v6.0.0/bin/node -l logs/api.log",
+    "start:local": "pm2 start ./bin/www --name hakai-api --watch --merge-logs --ignore-watch=\"logs node_modules .git\" -l logs/api.log",
+    "kill": "pm2 delete hakai-api",
+    "restart": "pm2 restart hakai-api",
+    "reset": "pm2 reset hakai-api",
+    "stop": "pm2 stop hakai-api",
+    "test": "DEBUG=false ./node_modules/.bin/mocha -t 4000",
+    "lint": "./node_modules/.bin/eslint ./**/*.js; exit 0;"
+  },
+  "author": {
+    "name": "Taylor Denouden",
+    "email": "taylor.denouden@hakai.org"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.9.1",
+    "bluebird": "^3.3.5",
+    "co-body": "^4.0.0",
+    "dotenv": "^2.0.0",
+    "knex": "^0.10.0",
+    "koa": "^1.2.0",
+    "koa-cors": "0.0.16",
+    "koa-morgan": "^0.4.0",
+    "koa-router": "^5.4.0",
+    "pg": "^4.5.5",
+    "validator": "^5.2.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "foreman": "^1.4.1",
+    "mocha": "^2.4.5",
+    "supertest-koa-agent": "^0.2.1"
+  }
+}
