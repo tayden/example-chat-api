@@ -1,5 +1,3 @@
-'use strict';
-
 const router = require('koa-router')();
 
 // See: https://github.com/pillarjs/path-to-regexp for path matching options
