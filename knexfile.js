@@ -3,38 +3,12 @@ const pg = require('pg');
 pg.defaults.ssl = true;
 
 module.exports = {
-  test: {
-    client: 'postgresql',
-    connection: {
-      database: 'fb-chat',
-      user:     'taylor',
-      charset: 'utf8',
-      application_name: 'fb-chat-api',
-      debug: process.env.DEBUG || false
-    },
-    pool: {
-      min: 1,
-      max: 10,
-      idleTimeout: 60000
-    }
-  },
   development: {
-    client: 'postgresql',
-    connection: process.env.DATABASE_URL,
-    pool: {
-      min: 1,
-      max: 10,
-      idleTimeout: 60000
-    }
+    client: 'pg',
+    connection: process.env.DATABASE_URL
   },
   production: {
-    client: 'postgresql',
-    connection: process.env.DATABASE_URL,
-    pool: {
-      min: 1,
-      max: 10,
-      idleTimeout: 60000
-    }
+    client: 'pg',
+    connection: process.env.DATABASE_URL
   }
-
 };
