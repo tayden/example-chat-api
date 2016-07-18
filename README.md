@@ -95,7 +95,6 @@ This application requires an installation of Node.js and NPM compatible with v6.
 ## References
 
 - [Github repository](https://github.com/raytula/hakai-api)
-- [.env file configuration](https://www.npmjs.com/package/dotenv)
 - [Koa.js documentation](http://koajs.com/)
 - [Knex.js documentation](http://knexjs.org/)
 
@@ -105,7 +104,7 @@ To run a local version of the service:
 
 - Clone the repo from [github.com/tayden/example-chat-api](https://github.com/tayden/example-chat-api)
 
-- Create a `.env` file in the example-chat-api directory and fill in the following variables
+- Define the folllowing environment variables
 
 ```ini
 PORT=8999

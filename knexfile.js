@@ -1,7 +1,3 @@
-// Update with your config settings.
-
-require('dotenv').config();
-
 // Turn on ssl default so migrations don't fail on heroku
 const pg = require('pg');
 pg.defaults.ssl = true;
